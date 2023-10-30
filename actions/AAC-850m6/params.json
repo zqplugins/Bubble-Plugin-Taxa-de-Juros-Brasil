@@ -1,0 +1,26 @@
+{
+    "category": "plugins",
+    "display": "Pegar taxas de juros",
+    "return_value": {
+        "AAD": {
+            "caption": "selic",
+            "name": "selic",
+            "rank": 0,
+            "value": "number"
+        },
+        "AAE": {
+            "caption": "ipca",
+            "name": "ipca",
+            "rank": 1,
+            "value": "number"
+        },
+        "AAF": {
+            "caption": "cdi",
+            "name": "cdi",
+            "rank": 2,
+            "value": "number"
+        }
+    },
+    "type": "server_side",
+    "use_packages": true
+}

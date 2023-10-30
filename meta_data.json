@@ -1,0 +1,13 @@
+{
+    "categories": {
+        "0": "analytics",
+        "1": "data (things)"
+    },
+    "description": "Pegue dados atualizados pelo BACEN das taxas anuais Selic, CDI e IPCA.\n\nTo receive special offers and important updates please visit: https://zeroqo.de/updates\n\n🔔 Get our 15 Top Plugins Bundle with 15 most popular plugins for only 20$/month.\nPlugins included in the Bundle:\n\n- Bubble Page to PDF converter\n- Stripe Marketplace Express\n- Air Calendar (Full Calendar 5.9.0)\n- AWS File uploader - Any size\n- Advanced Rich Text Editor\n- Mapbox Map\n- Phone Input Number with Formatting\n- Advanced Multi Uploader\n- Video Player\n- Dynamic Height & Width of Elements\n- Audio Recorder\n- Repeating Group to CSV\n- Print Pro\n- Advanced Audio Player\n- Easy File Downloader\n\nGet it here: https://zeroqode.com/bundle\n\nNEED HELP BUILDING A CUSTOM APPLICATION?\nhttps://dev.zeroqode.com\n\nSUPERCHARGE YOUR APP WITH ZEROQODE PLUGINS\nhttps://zeroqode.com/plugins\n\nQUESTIONS OR NEED HELP?\nhttps://forum.zeroqode.com",
+    "image": "//s3.amazonaws.com/appforest_uf/f1635890886222x447404034167991500/Banco_Central_do_Brasil_logo.png",
+    "license": "open_source",
+    "link": "https://zeroqode.com/plugins",
+    "name": "Taxa de Juros Brasil",
+    "plugin_instructions": "Instrução\n1. Em workflows, use a ação 'Pegar taxas de juros'\n2. Na ação seguinte, acesse os dados em 'Result of step 1 (Pegar taxas de juros)'s selic.\n",
+    "sa_node_version": 18
+}
