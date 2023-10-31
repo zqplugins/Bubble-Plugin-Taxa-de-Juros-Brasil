@@ -1,4 +1,4 @@
-async function(properties, context) {
+async function (properties, context) {
     const selic = require('selic');
     try {
         const response = await selic.getRatesObject(); // { selic: 7.75, cdi: 7.65, ipca: 9.32 }

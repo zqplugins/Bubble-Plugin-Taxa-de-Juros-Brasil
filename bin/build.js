@@ -62,11 +62,11 @@ function processDirectory(rootDirectory, destinationDirectory, sourcePath = root
             const scriptNameNoExtension = script.replace('.js', '');
 
             const scriptContent = fs.readFileSync(filePath).toString().trim();
-            const [, , scriptName, scriptParameters] = scriptContent.match(/^(function)\s*(.*?)(\(.*?\))/) ?? [];
+            const [, asyncModifier, , scriptName, scriptParameters] = scriptContent.match(/^(async)?\s*(function)\s*(.*?)(\(.*?\))/) ?? [];
             const scriptValidName = scriptName || scriptNameNoExtension;
             const scriptContentValidStructure = scriptName
                 ? scriptContent
-                : scriptContent.replace(/^(function)\s*(.*?)(\(.*?\))/, `$1 ${scriptValidName}$3`);
+                : scriptContent.replace(/^(async)?\s*(function)\s*(.*?)(\(.*?\))/, `$1 $2 ${scriptValidName}$4`);
 
             if (!scriptParameters) {
                 throw new Error(`Invalid script format. Please check the function declaration. Error in: ${sourceFilePath}`);
@@ -79,7 +79,7 @@ function processDirectory(rootDirectory, destinationDirectory, sourcePath = root
                     ignoreImports: true,
                 });
 
-                const wrapperScriptContent = `function${scriptParameters}{\n\t${obfuscatedScriptContent.getObfuscatedCode()}\n\t${scriptValidName}${scriptParameters};\n}`;
+                const wrapperScriptContent = `${asyncModifier ?? ''} function${scriptParameters}{\n\t${obfuscatedScriptContent.getObfuscatedCode()}\n\t${asyncModifier ? 'await' : ''} ${scriptValidName}${scriptParameters};\n}`.trim();
 
                 fs.writeFileSync(
                     destinationFilePath,
